@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Confluent.Kafka" Version="2.0.2" />
+        <PackageReference Include="Google.Protobuf" Version="3.22.0" />
+        <PackageReference Include="Google.Protobuf.Tools" Version="3.22.0" />
+        <PackageReference Include="Grpc.Tools" Version="2.51.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Protobuf Include="proto\StreamSnippet.proto">
+            <GrpcServices>Both</GrpcServices>
+            <Access>Public</Access>
+            <ProtoCompile>True</ProtoCompile>
+            <CompileOutputs>True</CompileOutputs>
+            <OutputDir>obj/Debug/</OutputDir>
+            <Generator>MSBuild:Compile</Generator>
+        </Protobuf>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Samples.Configuration\Samples.Configuration.csproj" />
+        <ProjectReference Include="..\Samples.Contracts.Stream\Samples.Contracts.Stream.csproj" />
+        <ProjectReference Include="..\Samples.Extensions\Samples.Extensions.csproj" />
+        <ProjectReference Include="..\Samples.Metrics.Abstractions\Samples.Metrics.Abstractions.csproj" />
+    </ItemGroup>
+</Project>

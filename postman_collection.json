@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "eaced449-e52d-4a37-a258-4edcb54f8565",
+		"name": "Samples.Stream",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5133359"
+	},
+	"item": [
+		{
+			"name": "GetStats",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8082/stats",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostSnippets",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"Body\": \"This is a test snippet/tweet/post/etc, here is the body\",\n        \"UserId\": \"boydc7\",\n        \"Tags\": [\n            \"#testtag1\",\n            \"#testtag2\"\n        ],\n        \"Mentions\": [\n            \"@langboyd\",\n            \"@madib\"\n        ]\n    },\n    {\n        \"Body\": \"2 - This is a test snippet/tweet/post/etc, here is the body\",\n        \"UserId\": \"boydc7a\",\n        \"Tags\": [\n            \"#testtag1\",\n            \"#testtag2a\"\n        ],\n        \"Mentions\": [\n            \"@langboyd2\",\n            \"@madib2\"\n        ]\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/snippets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"snippets"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
